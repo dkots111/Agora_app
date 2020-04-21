@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
 import 'package:flutter/material.dart';
 import '../utils/settings.dart';
+import 'package:gradient_app_bar/gradient_app_bar.dart';
 
 class CallPage extends StatefulWidget {
   /// non-modifiable channel name of the page
@@ -297,9 +298,10 @@ class _CallPageState extends State<CallPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: GradientAppBar(
+        gradient: LinearGradient(colors: [Color(0xFFE06478), Color(0xFFFCDD89)]),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0))),
-        title: Text('Agora QuickStart'),
+        title: Text('Agora QuickStart', style: TextStyle(fontFamily: 'Nunito', fontSize: 20.0)),
       ),
       backgroundColor: Colors.black,
       body: Center(

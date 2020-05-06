@@ -145,12 +145,12 @@ class IndexState extends State<IndexPage> with SingleTickerProviderStateMixin {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(top: 70.0),
+            padding: EdgeInsets.only(top: 50.0),
             width: MediaQuery.of(context).size.width * 0.4,
             child: Center(
               child: RaisedButton(
                 onPressed: onJoin,
-                color: Color(0xFFE06478),
+                color: Colors.redAccent,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -162,6 +162,18 @@ class IndexState extends State<IndexPage> with SingleTickerProviderStateMixin {
                         fontSize: 15.0)),
                 padding: EdgeInsets.all(10.0),
               ),
+            ),
+          ),
+          SizedBox(height: 50.0,),
+          Container(
+            margin: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.60),
+            child: FloatingActionButton.extended(
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed('/onboardingpage');
+              },
+              label : Text('Logout', style: TextStyle(fontSize: 12.0),),
+              icon: Icon(Icons.arrow_back_ios, size: 12.0,),
+              backgroundColor: Colors.redAccent,
             ),
           ),
         ],

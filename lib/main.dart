@@ -1,5 +1,8 @@
+import 'package:agora_flutter_quickstart/src/pages/LoginPage.dart';
+import 'package:agora_flutter_quickstart/src/pages/Onboarding.dart';
+import 'package:agora_flutter_quickstart/src/pages/SignUp.dart';
+import 'package:agora_flutter_quickstart/src/pages/index.dart';
 import 'package:flutter/material.dart';
-import './src/pages/SplashScreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +16,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: OnboardingPage(),
+      routes: <String, WidgetBuilder> {
+        '/onboardingpage' : (BuildContext context) => OnboardingPage(),
+        '/landingpage' : (BuildContext context) => MyApp(),
+        '/signup' : (BuildContext context) => SignupPage(),
+        '/homepage' : (BuildContext context) => IndexPage(),
+        '/loginpage' : (BuildContext context) => LoginPage()
+      },
     );
   }
 }
